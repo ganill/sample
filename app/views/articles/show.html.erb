@@ -1,0 +1,14 @@
+<table>
+	<tr><td> Name </td>
+  <td> <%= @article.name %> </td>
+	</tr>
+		<tr><td> Description </td>
+  <td> <%= @article.description %> </td>
+	</tr>
+		<tr><td> editor </td>
+  <td> <%= @article.user.email %> </td>
+	</tr>
+		<tr><td> is Published </td>
+  <td> <%= @article.published? ? "yes" : "no" %> </td>
+	</tr>
+</table>

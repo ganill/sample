@@ -1,0 +1,37 @@
+
+<div class="row" style="float:right">
+<%= link_to 'add event',new_event_path %>
+
+</div>
+
+<table width="100%">
+	
+	<tr>
+
+	<th> Name</th>
+	<th> Date</th>
+	<th> Description</th>
+	<th> Actions</th>
+
+	</tr>
+
+<% @events.each do |event| %>
+
+<tr id="event_<%= event.id %>">
+<td> <%= event.name %></td>
+<td> <%= event.date %></td>
+<td> <%= event.description %></td>
+<td>
+<%= link_to 'show', event_path(event) %>
+ <%= link_to 'edit', edit_event_path(event) %>
+     <%= link_to 'delete', event, method: :delete, data: {remote: true,confirm: 'are you sure?'}  %>
+     
+ </td>
+</tr>
+
+
+<% end %>
+
+</table>
+
+

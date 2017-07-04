@@ -1,0 +1,36 @@
+<div id="header">
+<div class="row">
+	<div class="col-xs-4"> LOGO</div>
+	<div class="col-xs-4">
+	  <% if current_user.present? %> 
+	 welcome to <%=current_user.email %>! 
+	                         <%=image_tag current_user.pic.url(:thumb) ,:style=>"height:20px;width:40px"%>
+	                            <% else %>
+	                            
+	                        <% end %> 
+	 </div>
+
+	<div class="col-xs-4">
+	 <% if current_user.present? %>
+    <%= link_to 'Log out', sign_out_path, method: 
+	                            "delete" %>
+	                            <% end %>	
+	 </div>
+</div>
+ <% if current_user.present? %>
+<div class="row">
+
+<li>
+	
+	<ul>
+	  <li><a href="/profiles"> My Profile </a></li>
+		<li> <a href="/events">Event</a> </li>
+		<li><a href="/articles"> Article </a></li>
+	</ul>
+</li>
+
+</div>
+
+<% end %>
+  </div>
+  <br/><br/><br/><br/>

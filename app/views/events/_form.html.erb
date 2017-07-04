@@ -1,0 +1,33 @@
+<%= form_for @event do |f| %>
+<div class="row"> 
+ 
+<label> Name </label>
+<%= f.text_field :name %>
+ 
+</div>
+<br/>
+<div class="row"> 
+ 
+<label> Date </label>
+<%= f.text_field :date %>
+ 
+</div>
+<br/>
+<div class="row"> 
+ 
+<label> Description </label>
+<%= f.text_area :description %>
+ 
+</div>
+<br/>
+<div class="row"> 
+ 
+<label> Address </label>
+<%= f.text_area :address %>
+ 
+</div>
+<br/>
+<div class="row"> 
+<%= f.submit 'save' %>
+</div>
+<% end %>

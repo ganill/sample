@@ -1,0 +1,14 @@
+<%= form_for @article do |f| %>
+
+<table>
+	<%= f.hidden_field :editor_id, value: current_user.id  %>
+	<tr> <td>Name </td> <td> <%= f.text_field :name ,:onkeypress=>"return isNumberKey(event)"%> </td></tr>
+	<tr> <td>description </td> <td> <%= f.text_area :description %> </td></tr>
+	<tr> <td> is published: </td> <td> <%= f.check_box :published	 %> </td></tr>
+	<tr><td> <%= f.submit 'save' %></td></tr>
+ 
+
+</table>
+
+<% end %>
+

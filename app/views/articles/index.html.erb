@@ -1,0 +1,25 @@
+<%= link_to 'add article', new_article_path %>
+
+<table width="100%">
+	<th>Name</th>
+	<th>description</th>
+	<th>published</th>
+		<th>editor</th>
+		<th>Actions</th>
+
+<% @articles.each do |article| %>
+		<tr>
+			<td> <%= article.name %></td>
+      <td> <%= article.description %></td>
+      <td> <%= article.published? ? "Yes": "No" %></td>
+      <td> <%= article.user.email %></td>
+      <td> <%= link_to 'show', article_path(article) %>
+
+      <% if can? :update, article %>
+           <%= link_to 'edit', edit_article_path(article) %>
+           <%= link_to 'delete',article, method: :delete, data: {confirm: 'are you sure?'}  %>
+      <% end %>     
+      </td>
+		</tr>
+<% end %>		
+</table>
