@@ -13,7 +13,7 @@
       <td> <%= article.description %></td>
       <td> <%= article.published? ? "Yes": "No" %></td>
       <td> <%= article.user.email %></td>
-      <td> <%= link_to 'show', article_path(article) %>
+      <td> <%= link_to 'shows', article_path(article) %>
 
       <% if can? :update, article %>
            <%= link_to 'edit', edit_article_path(article) %>
